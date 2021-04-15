@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Commitizen adapter using the commitlint.config.js",
   "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "commit": "git-cz"
   },
@@ -23,8 +26,8 @@
     }
   },
   "dependencies": {
-    "@commitlint/load": "^12.1.1",
-    "@commitlint/types": "^12.1.1",
+    "@commitlint/load": "^12.2.0-alpha.0",
+    "@commitlint/types": "^12.2.0-alpha.0",
     "chalk": "^4.1.0",
     "lodash": "^4.17.21",
     "word-wrap": "^1.2.3"
