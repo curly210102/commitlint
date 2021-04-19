@@ -1,5 +1,5 @@
 {
-  "name": "cz-commitlint",
+  "name": "@curlybrackets/cz-commitlint",
   "version": "1.0.0",
   "description": "Commitizen adapter using the commitlint.config.js",
   "main": "./lib/index.js",
@@ -7,12 +7,14 @@
     "lib"
   ],
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "release": "nrm use npm && standard-version -t @curly-brackets/cz-commitlint@ --first-release && npm publish --access public",
+    "pre-release": "nrm use local && standard-version --skip.tag --skip.commit --prerelease && npm publish --access public"
   },
-  "homepage": "https://github.com/conventional-changelog/commitlint#readme",
+  "homepage": "https://github.com/curly210102/commitlint/tree/curlybrackets/cz-commitlint/@commitlint/cz-commitlint#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/conventional-changelog/commitlint.git"
+    "url": "https://github.com/curly210102/commitlint.git"
   },
   "engineStrict": true,
   "engines": {
@@ -37,6 +39,12 @@
     "inquirer": "^8.0.0"
   },
   "devDependencies": {
-    "@types/inquirer": "^7.3.1"
+    "@types/inquirer": "^7.3.1",
+    "standard-version": "^9.2.0"
+  },
+  "standard-version": {
+    "skip": {
+      "changelog": true
+    }
   }
 }

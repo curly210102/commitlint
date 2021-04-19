@@ -1,6 +1,6 @@
 > Commitizen adapter using the commitlint.config.js
 
-# @commitlint/cz-commitlint
+# cz-commitlint
 
 This is a commitizen adapter, using this adapter, commitizen works based on commitlint.config.js.
 
