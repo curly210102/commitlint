@@ -1,6 +1,6 @@
 > Commitizen adapter using the commitlint.config.js
 
-# @commitlint/cz-commitlint
+# cz-commitlint
 
 This is a commitizen adapter, using this adapter, commitizen works based on commitlint.config.js.
 
@@ -81,6 +81,99 @@ git add .
 npm run commit
 # or
 yarn run commit
+```
+
+## Configure cz-commitlint
+
+Prompt Config is used by `@commitlint/cz-commitlint`.
+
+There are two fields: `messages` and `questions`
+
+## `messages`
+
+Set hint contents, you can configure it to support localization.
+
+- skip: The field can be skip by enter
+- max: Maximum number of characters
+- min: Minimum number of characters
+- emptyWarning: The field can not be empty
+- upperLimitWarning: The characters limit is exceeded
+- lowerLimitWarning: The characters is less than lower limit
+
+## `questions`
+
+Specify the interactive steps, Steps can only be configure with
+
+- header
+- type
+- scope
+- subject
+- body
+- footer
+- isBreaking
+- breaking
+- breakingBody
+- isIssueAffected
+- issues
+- issuesBody
+
+```json
+// package.json
+{
+  "config": {
+    "commitizen": {
+      "path": "@optimizer/cz-commitlint",
+      "prompt": {
+        "questions": {
+          "type": {
+            "description": "Select the type of change that you're committing:",
+            "enum": {
+              "site": {
+                "description": "Site Features & Improves & BugFix",
+                "title": "site"
+              },
+              "post": {
+                "description": "Post create & update & publish",
+                "title": "post"
+              },
+              "build": {
+                "description": "Build System & Commit Flow & CI",
+                "title": "build"
+              }
+            }
+          },
+          "scope": {
+            "description": "What is the scope of this change"
+          },
+          "subject": {
+            "description": "Write a short, imperative tense description of the change"
+          },
+          "body": {
+            "description": "Provide a longer description of the change"
+          },
+          "isBreaking": {
+            "description": "Are there any breaking changes?"
+          },
+          "breakingBody": {
+            "description": "A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself"
+          },
+          "breaking": {
+            "description": "Describe the breaking changes"
+          },
+          "isIssueAffected": {
+            "description": "Does this change affect any open issues?"
+          },
+          "issuesBody": {
+            "description": "If issues are closed, the commit requires a body. Please enter a longer description of the commit itself"
+          },
+          "issues": {
+            "description": "Add issue references (e.g. \"fix #123\", \"re #123\".)"
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Related

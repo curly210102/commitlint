@@ -10,7 +10,12 @@ type Commit = (message: string) => void;
  * @return {void}
  */
 export function prompter(inquirer: Inquirer, commit: Commit): void {
-	load().then(({rules, prompt = {}}) => {
-		process(rules, prompt, inquirer).then(commit);
+	load().then(({rules, prompt}) => {
+		process(
+			rules,
+			// if commitlint shareable config not support prompt, use commitizen config
+			prompt || require('commitizen').configLoader.load()?.prompt || {},
+			inquirer
+		).then(commit);
 	});
 }

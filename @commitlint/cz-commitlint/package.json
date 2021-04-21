@@ -1,6 +1,6 @@
 {
-  "name": "cz-commitlint",
-  "version": "1.0.0",
+  "name": "@optimizer/cz-commitlint",
+  "version": "0.1.0",
   "description": "Commitizen adapter using the commitlint.config.js",
   "main": "./lib/index.js",
   "files": [
@@ -30,10 +30,10 @@
     "@commitlint/types": "^12.1.1",
     "chalk": "^4.1.0",
     "lodash": "^4.17.21",
-    "word-wrap": "^1.2.3"
+    "word-wrap": "^1.2.3",
+    "commitizen": "^4.0.3"
   },
   "peerDependencies": {
-    "commitizen": "^4.0.3",
     "inquirer": "^8.0.0"
   },
   "devDependencies": {
